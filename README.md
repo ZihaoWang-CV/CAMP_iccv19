@@ -9,7 +9,7 @@ I have left CUHK and my email address is deprecated. Please directly open a new 
 ## Requirements and Installation
 We recommended the following dependencies.
 
-* Python 3.0
+* Python 3
 * [PyTorch](http://pytorch.org/) (>1.0)
 * [NumPy](http://www.numpy.org/) (>1.12.1)
 * [TensorBoard](https://github.com/TeamHG-Memex/tensorboard_logger)
