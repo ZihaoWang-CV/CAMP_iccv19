@@ -1,0 +1,60 @@
+common:
+    data_path: ../../data/
+    data_name: f30k_precomp
+    use_restval: True
+    crop_size: 224
+    vocab_path: ./vocab/
+    logger_name: ./runs/f30k_gate_fusion_test/
+
+    num_epochs: 300
+    batch_size: 128
+    word_dim: 300
+    img_dim: 2048
+    embed_size: 1024
+    grad_clip: 2
+    
+    learning_rate: 0.01
+    lr_update: 50
+    
+    workers: 3
+    log_step: 10
+    val_epoc: 1
+    
+    cnn_type: None
+    cross_model: True
+    max_violation: True
+    loss_func: BCE
+    margin: 0.2
+    measure: gate_fusion_new
+    fusion_func: concat
+
+    word_embed: False
+    embed_mask: False
+
+    self_attention: False
+    bi_gru: True
+    num_layers: 1
+    use_abs: False
+    no_imgnorm: True
+    no_txtnorm: True
+
+    resume: ../f30k_gate_fusion/checkpoint_150.pth.tar
+    finetune: False
+    finetune_gate: True
+
+    lr_scheduler:
+        type: STEP
+
+        lr_steps: [18750, 37500, 56250]
+        lr_mults: [0.1, 0.1, 0.1]
+
+        base_lr: 0.2
+        warmup_steps: 2500
+        warmup_lr: 0.8
+        max_iter: 62500
+
+    optimizer:
+        type: SGD
+        momentum: 0.9
+        weight_decay: 0.0001
+        nesterov: True
