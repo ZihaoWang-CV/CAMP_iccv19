@@ -4,7 +4,6 @@ This repository is for [CAMP: Cross-Modal Adaptive Message Passing for Text-Imag
 
 It is built on top of the [VSE++](https://github.com/fartashf/vsepp) and [SCAN](https://kuanghuei.github.io/SCANProject/) in PyTorch.
 
-I have left CUHK and my email address is deprecated. Please directly open a new issue or contact zihaowang.cv@gmail.com if you have further quetions about this repository.
 
 ## Requirements and Installation
 We recommended the following dependencies.
@@ -55,6 +54,8 @@ Training the full CAMP model on Flickr30K dataset:
 cd ./experiments/f30k_gate_fusion
 python python -u ../../train.py --config ./config_finetune.yaml
 ```
+**We initialize the network weights from the pretrained cross-attention model to train the full CAMP model. The weights for attention map are fixed for the first several epochs and then we finetune the whole network.**
+
 
 ## Evaluate trained models
 Changing the `resume` arguments in the coreesponding config file and running evaluation in the project root directory:
@@ -65,7 +66,7 @@ from test_modules import test_CAMP_model
 #config_path = "./experiments/f30k_cross_attention/config_test.yaml"
 test_CAMP_model(config_path)
 ```
-
+Pretrained model for Flickr30K could be downloaded [here](https://drive.google.com/drive/folders/1o8rUv78uS_aX4P1hMPELl53cxnZ8UqiF?usp=sharing).
 
 ## Reference
 
@@ -85,3 +86,4 @@ year = {2019}
 
 [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
+*I have left CUHK and the email address is deprecated. Please directly open a new issue or contact zihaowang.cv@gmail.com if you have further quetions. Thanks!*
